@@ -1,0 +1,21 @@
+name: Iseeyou
+options:
+  bundleIdPrefix: com.yourdomain
+targets:
+  Iseeyou:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: .
+        excludes:
+          - "backend"
+          - ".github"
+          - "build_and_sign.py"
+          - "gen_png.py"
+          - "project.yml"
+          - "export.plist"
+    info:
+      path: Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen

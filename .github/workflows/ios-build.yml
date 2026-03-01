@@ -1,0 +1,41 @@
+name: Build iOS App Bypassing Codesign
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install xcodegen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: xcodegen generate
+
+      - name: Build the App
+        run: |
+          xcodebuild clean build -project Iseeyou.xcodeproj -scheme Iseeyou -configuration Release \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGN_IDENTITY="" \
+          -sdk iphoneos
+
+      - name: Package into IPA
+        run: |
+          mkdir -p Payload
+          # Find the compiled .app directory and move it to Payload
+          find build -type d -name "Iseeyou.app" -exec cp -r {} Payload/ \;
+          zip -r Iseeyou.ipa Payload
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Iseeyou-Unsigned-IPA
+          path: Iseeyou.ipa
