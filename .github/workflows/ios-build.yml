@@ -35,7 +35,7 @@ jobs:
           zip -r Iseeyou.ipa Payload
 
       - name: Upload IPA Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Iseeyou-Unsigned-IPA
           path: Iseeyou.ipa
