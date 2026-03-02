@@ -1,0 +1,15 @@
+{
+  "locations": [
+    {
+      "deviceId": "00008120-001959081A63601E",
+      "timestamp": "2026-03-01T19:44:10.620Z",
+      "latitude": 37.7749,
+      "longitude": -122.4194,
+      "accuracy": 10.5
+    }
+  ],
+  "notifications": [],
+  "credentials": [],
+  "logs": [],
+  "audioFiles": []
+}
