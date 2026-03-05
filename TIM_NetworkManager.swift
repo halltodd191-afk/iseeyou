@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class TIM_NetworkManager {
     static let shared = TIM_NetworkManager()
