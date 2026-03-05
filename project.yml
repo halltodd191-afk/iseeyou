@@ -7,16 +7,11 @@ targets:
     platform: iOS
     deploymentTarget: "14.0"
     dependencies:
-      - framework: Contacts.framework
-        implicit: true
-      - framework: AVFoundation.framework
-        implicit: true
-      - framework: Security.framework
-        implicit: true
-      - framework: CoreLocation.framework
-        implicit: true
-      - framework: UserNotifications.framework
-        implicit: true
+      - sdk: Contacts.framework
+      - sdk: AVFoundation.framework
+      - sdk: Security.framework
+      - sdk: CoreLocation.framework
+      - sdk: UserNotifications.framework
     sources:
       - path: .
         excludes:
