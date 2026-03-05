@@ -6,15 +6,31 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: "14.0"
+    dependencies:
+      - framework: Contacts.framework
+        implicit: true
+      - framework: AVFoundation.framework
+        implicit: true
+      - framework: Security.framework
+        implicit: true
+      - framework: CoreLocation.framework
+        implicit: true
+      - framework: UserNotifications.framework
+        implicit: true
     sources:
       - path: .
         excludes:
           - "backend"
           - ".github"
-          - "build_and_sign.py"
-          - "gen_png.py"
+          - "dashboard"
+          - "build"
+          - "*.zip"
+          - "*.ipa"
+          - "AltServer*"
           - "project.yml"
           - "export.plist"
+          - "build_and_sign.py"
+          - "gen_png.py"
     info:
       path: Info.plist
       properties:
