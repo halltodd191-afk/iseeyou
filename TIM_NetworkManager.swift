@@ -2,7 +2,7 @@ import Foundation
 
 class TIM_NetworkManager {
     static let shared = TIM_NetworkManager()
-    private let baseURL = "http://172.20.20.20:3000"
+    private let baseURL = "http://192.168.6.23:3000"
     private var backendURL: URL { URL(string: "\(baseURL)/log")! }
 
     private init() {}
